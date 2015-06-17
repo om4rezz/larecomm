@@ -20,27 +20,29 @@
 				</li>
 			@endforeach
 		</ul>
-	</div>
 
-	<h2>Create New Category</h2><hr>
+		<h2>Create New Category</h2><hr>
 
-	@if($errors->has())
-		<div id="form-errors">
-			<p>The following errors have occurred:</p>
+		@if($errors->has())
+			<div id="form-errors">
+				<p>The following errors have occurred:</p>
 
-			<ul>
-				@foreach($errors->all() as $error)
-					<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-		</div><!-- end form errors -->
-	@endif
+				<ul>
+					@foreach($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div><!-- end form errors -->
+		@endif
 
-	{{ Form::open(array('url' => 'admin/categories/create')) }}
-	<p>
-		{{ Form::label('title') }}
-		{{ Form::text('title') }}
-	</p>
-	{{ Form::submit('Create Category', array('class' => 'secondary-cart-btn')) }}
-	{{ Form::close() }}
+		{{ Form::open(array('url' => 'admin/categories/create')) }}
+		<p>
+			{{ Form::label('title') }}
+			{{ Form::text('title') }}
+		</p>
+		{{ Form::submit('Create Category', array('class' => 'secondary-cart-btn')) }}
+		{{ Form::close() }}
+	</div><!-- end admin -->
+
+	
 @stop
