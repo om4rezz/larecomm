@@ -33,8 +33,11 @@ class CategoriesController extends BaseController {
 		if($category) {
 			$category->delete();
 			return Redirect::to('admin/categories/index')
-			->with('message', 'Category Deleted')
+			->with('message', 'Category Deleted');
 		}
+
+		return Redirect::to('admin/categories/index')
+		->with('message', "Something went wrong, please try again");
 	}
 
 }
