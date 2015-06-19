@@ -9,7 +9,7 @@ class ProductsController extends BaseController {
 	public function getIndex() {
 		$categories = array();
 
-		foreach ($Category::all() as $category) {
+		foreach (Category::all() as $category) {
 			$categories[$category->id] = $category->title;
 		}
 
@@ -65,7 +65,7 @@ class ProductsController extends BaseController {
 			return Redirect::to('admin/products/index')->with('message', 'Product Updated');
 		}
 
-		return Redirect::to('admin/products/index')with('message', 'Invalid Product');
+		return Redirect::to('admin/products/index')->with('message', 'Invalid Product');
 	}
 
 }
