@@ -11,7 +11,7 @@ class UsersController extends BaseController
 
     public function getNewaccount()
     {
-        return View::make('users.newAccount');
+        return View::make('users.newaccount');
     }
 
     public function postCreate()
