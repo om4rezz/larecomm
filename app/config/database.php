@@ -57,7 +57,7 @@ return array(
 			'host'      => '127.0.0.1',
 			'database'  => 'larecomm',
 			'username'  => 'root',
-			'password'  => 'pentester',
+			'password'  => 'g33k',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
