@@ -7,20 +7,19 @@
     </div><!-- end product-image -->
     <div id="product-details">
         <h1>{{ $product->title }}</h1>
-
         <p>{{ $product->description }}</p>
 
         <hr/>
 
-        <form action="#" method="post">
-            <label for="qty">Qty:</label>
-            <input type="text" id="qty" name="qty" value="1" maxlength="2">
-
+            {{ Form::open(array('url'=>'store/addtocart')) }}
+                {{ Form::label('quantity', 'Qty') }}
+                {{ Form::text('quantity', 1, array('maxlength'=>2)) }}
+                {{ Form::hidden('id', $product->id) }}
             <button type="submit" class="secondary-cart-btn">
                 {{ HTML::image('img/white-cart.gif', "Add to Cart") }}
                 ADD TO CART
             </button>
-        </form>
+        {{ Form::close() }}
     </div><!-- end product-details -->
     <div id="product-info">
         <p class="price">${{ $product->price }}</p>

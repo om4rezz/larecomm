@@ -30,11 +30,15 @@
                 </h5>
 
                 <p>
-                    <a href="#" class="cart-btn">
-                        <span class="price">${{ $product->price }}</span>
-                        {{ HTML::image("img/white-cart.gif", "Add to Cart") }}
+                    {{ Form::open(array('url'=>'store/addtocart')) }}
+                    {{ Form::hidden('quantity', 1) }}
+                    {{ Form::hidden('id', $product->id) }}
+                    <button type="submit" class="cart-btn">
+                        <span class="price">{{ $product->price }}</span>
+                        {{ HTML::image('img/white-cart.gif', 'Add to Cart') }}
                         ADD TO CART
-                    </a>
+                    </button>
+                    {{ Form::close() }}
                 </p>
             </div>
         @endforeach

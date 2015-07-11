@@ -41,7 +41,7 @@ class StoreController extends BaseController
 
         Cart::insert(array(
             'id'=>$product->id,
-            'title'=>$product->title,
+            'name'=>$product->title,
             'price'=>$product->price,
             'quantity'=>$quantity,
             'image'=>$product->image
